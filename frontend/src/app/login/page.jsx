@@ -6,8 +6,8 @@ import api from '@/lib/api';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('admin@example.com');
-  const [password, setPassword] = useState('password123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -77,6 +77,12 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+          </div>
+
+          <div className="text-center text-sm text-gray-500 my-4 bg-gray-50 p-3 rounded-md border border-gray-200">
+            <p className="font-semibold mb-1">Test Login Credentials:</p>
+            <p>Email: <span className="font-mono text-gray-700">admin@example.com</span></p>
+            <p>Password: <span className="font-mono text-gray-700">password123</span></p>
           </div>
 
           <div>
